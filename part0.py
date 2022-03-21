@@ -119,77 +119,77 @@ def test():
                     [ 96.,  24.,   0.]], dtype = np.float) 
 
   if __name__ == "__main__":
-    print 'Evaluating video_volume.'
+    print('Evaluating video_volume.')
   for img_list, true_out in zip((image_list1, image_list2), (video_volume1, video_volume2)):
     if __name__ == "__main__":
-      print "input:\n{}\n".format(img_list)
+      print("input:\n{}\n".format(img_list))
 
     usr_out = video_volume(img_list)
 
     if not type(usr_out) == type(true_out):
       if __name__ == "__main__":
-        print "Error- video_volume has type {}. Expected type is {}.".format(
-            type(usr_out), type(true_out))
+        print("Error- video_volume has type {}. Expected type is {}.".format(
+            type(usr_out), type(true_out)))
       return False
 
     if not usr_out.shape == true_out.shape:
       if __name__ == "__main__":
-        print "Error- video_volume has shape {}. Expected shape is {}.".format(
-            usr_out.shape, true_out.shape)
+        print("Error- video_volume has shape {}. Expected shape is {}.".format(
+            usr_out.shape, true_out.shape))
       return False
 
     if not usr_out.dtype == true_out.dtype:
       if __name__ == "__main__":
-        print "Error- video_volume has dtype {}. Expected dtype is {}.".format(
-            usr_out.dtype, true_out.dtype)
+        print("Error- video_volume has dtype {}. Expected dtype is {}.".format(
+            usr_out.dtype, true_out.dtype))
       return False
 
     if not np.all(usr_out == true_out):
       if __name__ == "__main__":
-        print "Error- video_volume has value:\n{}\nExpected value:\n{}".format(
-            usr_out, true_out)
+        print("Error- video_volume has value:\n{}\nExpected value:\n{}".format(
+            usr_out, true_out))
       return False
 
   if __name__ == "__main__":
-    print "video_volume passed."
-    print "evaluating ssd"
+    print("video_volume passed.")
+    print("evaluating ssd")
 
   for vid_volume, true_out in zip((video_volume1, video_volume2), (diff1, diff2)):
     if __name__ == "__main__":
-      print "input:\n{}\n".format(vid_volume)
+      print("input:\n{}\n".format(vid_volume))
 
     usr_out = ssd(vid_volume)
 
     if not type(usr_out) == type(true_out):
       if __name__ == "__main__":
-        print "Error- ssd has type {}. Expected type is {}.".format(
-            type(usr_out), type(true_out))
+        print("Error- ssd has type {}. Expected type is {}.".format(
+            type(usr_out), type(true_out)))
       return False
 
     if not usr_out.shape == true_out.shape:
       if __name__ == "__main__":
-        print "Error- ssd has shape {}. Expected shape is {}.".format(
-            usr_out.shape, true_out.shape)
+        print("Error- ssd has shape {}. Expected shape is {}.".format(
+            usr_out.shape, true_out.shape))
       return False
 
     if not usr_out.dtype == true_out.dtype:
       if __name__ == "__main__":
-        print "Error- ssd has dtype {}. Expected dtype is {}.".format(
-            usr_out.dtype, true_out.dtype)
+        print("Error- ssd has dtype {}. Expected dtype is {}.".format(
+            usr_out.dtype, true_out.dtype))
       return False
 
     if not np.all(np.abs(usr_out - true_out) < 1.):
       if __name__ == "__main__":
-        print "Error- ssd has value:\n{}\nExpected value:\n{}".format(
-            usr_out, true_out)
+        print("Error- ssd has value:\n{}\nExpected value:\n{}".format(
+            usr_out, true_out))
       return False
 
   if __name__ == "__main__":
-    print "All unit tests successful."
+    print("All unit tests successful.")
   return True
 
 if __name__ == "__main__":
-  print "Performing unit tests.(ssd will be accepted if the output is within 1 of the expected output.)"
+  print("Performing unit tests.(ssd will be accepted if the output is within 1 of the expected output.)")
   np.set_printoptions(precision=1)
 
   test()

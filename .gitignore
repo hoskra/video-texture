@@ -1,1 +1,3 @@
-videos
+videos/*
+savedDifferences/*
+out/*.mp4

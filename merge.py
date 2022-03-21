@@ -10,7 +10,7 @@ parser.add_argument('img_dir', type=str, help='folder containing image frames')
 args = parser.parse_args()
 
 if not os.path.exists(args.img_dir):
-  print "Error - the given path is not valid: {}".format(args.img_dir)
+  print("Error - the given path is not valid: {}".format(args.img_dir))
 
 writer = cv2.VideoWriter()
 
@@ -25,5 +25,6 @@ for filename in filenames:
     img = cv2.imread(os.path.join(args.img_dir, filename))
     if not writer.isOpened():
       writer.open(os.path.join(args.img_dir, 'video.avi'), 
-          cv2.cv.CV_FOURCC('I','4','2','0'), 30, (img.shape[0], img.shape[1]))
+          cv2.VideoWriter_fourcc('I','4','2','0'), 30, (img.shape[0], img.shape[1]))
+
     writer.write(img)

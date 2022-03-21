@@ -49,46 +49,46 @@ def test():
   out2 = np.array([[1.]], dtype = float)
 
   if __name__ == "__main__":
-    print 'Evaluating diff2.'
+    print('Evaluating diff2.')
   for d, true_out in zip((d1, d2), (out1, out2)):
     if __name__ == "__main__":
-      print "input:\n{}\n".format(d)
+      print("input:\n{}\n".format(d))
 
     usr_out = diff2(d) 
 
     if not type(usr_out) == type(true_out):
       if __name__ == "__main__":
-        print "Error- diff2 output has type {}. Expected type is {}.".format(
-            type(usr_out), type(true_out))
+        print("Error- diff2 output has type {}. Expected type is {}.".format(
+            type(usr_out), type(true_out)))
       return False
 
     if not usr_out.shape == true_out.shape:
       if __name__ == "__main__":
-        print "Error- diff2 output has shape {}. Expected shape is {}.".format(
-            usr_out.shape, true_out.shape)
+        print("Error- diff2 output has shape {}. Expected shape is {}.".format(
+            usr_out.shape, true_out.shape))
       return False
 
     if not usr_out.dtype == true_out.dtype:
       if __name__ == "__main__":
-        print "Error- diff2 output has dtype {}. Expected dtype is {}.".format(
-            usr_out.dtype, true_out.dtype)
+        print("Error- diff2 output has dtype {}. Expected dtype is {}.".format(
+            usr_out.dtype, true_out.dtype))
       return False
 
     if not np.all(np.abs(usr_out - true_out) < 0.05):
       if __name__ == "__main__":
-        print "Error- diff2 output has value:\n{}\nExpected value:\n{}".format(
-            usr_out, true_out)
+        print("Error- diff2 output has value:\n{}\nExpected value:\n{}".format(
+            usr_out, true_out))
       return False
 
   if __name__ == "__main__":
-    print "diff2 passed."
+    print("diff2 passed.")
 
   if __name__ == "__main__":
-    print "All unit tests successful."
+    print("All unit tests successful.")
   return True
 
 if __name__ == "__main__":
-  print "Performing unit tests. (Your output will be accepted if it is within .05 of the true output)"
+  print("Performing unit tests. (Your output will be accepted if it is within .05 of the true output)")
   np.set_printoptions(precision=1)
 
   test()

@@ -10,7 +10,7 @@ parser.add_argument('vid_path', type=str, help='the path to the target video.')
 args = parser.parse_args()
 
 if not os.path.exists(args.vid_path):
-  print "Error - the given path is not valid: {}".format(args.vid_path)
+  print("Error - the given path is not valid: {}".format(args.vid_path))
 
 cap = cv2.VideoCapture(args.vid_path)
 
